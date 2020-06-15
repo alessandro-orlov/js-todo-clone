@@ -14,7 +14,15 @@
   min-height: 500px;
 }
 
+ul li {
+  margin-left: 20px;
+}
 
 .tamplate {
   display: none;
+}
+
+.delete-task-element {
+  cursor: pointer;
+  color: red;
 }

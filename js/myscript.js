@@ -3,15 +3,21 @@ $(document).ready(
 
 
     // Al click prendo il valore del input .task e lo aggiungo alla lista
-    $('.add-task-btn-js').click(function(){
-
+    $('.add-task-btn-js').click(function() {
+      // Prendo il vaolre dell'input
       var taskValue = $('input.task').val();
+      // Clone tamplate dal DOM html
+      var cloneLi = $('.tamplate > li').clone();
+      // Aggiungo al Tamplate il valore del input
+      cloneLi.prepend(taskValue);
 
-      $('.lista-task').append('<li>' + taskValue + '<span class="delete-task-element"> <i class="fas fa-times"></i> </span></li>');
+      // Inserisco l'elemento nella lista
+      $('.lista-task').append(cloneLi);
 
-      // resetto il valore iniziale (vuoto) dell'input
+      // Resetto il valore iniziale (vuoto) dell'input
       taskValue = $('input.task').val('');
     });
+
 
     // Cancello l'elemento dalla lista
     $(document).on('click', '.delete-task-element', function() {
